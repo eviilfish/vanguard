@@ -100,12 +100,75 @@ nav a {
 }
 #innovation {
     color: var(--white);
+    /*add background blur*/
+}
+.gridoffer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 0.2fr);
+    gap: 15px;
+}
+#strategic1,
+#high-impact2,
+#business3,
+#digital4,
+#exclusive5,
+#corporate6
+{
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+}
+#strategic1 h3,
+#high-impact2 h3,
+#business3 h3,
+#digital4 h3,
+#exclusive5 h3,
+#corporate6 h3
+{
+    padding: 30px 40px 20px 40px;
 }
 
-#expertise {
-    color: var(--black);
+#strategic1 p,
+#high-impact2 p,
+#business3 p,
+#digital4 p,
+#exclusive5 p,
+#corporate6 p 
+{
+    padding: 0 20px 20px 20px;
 }
+#proven {
+    background-color: var(--blue);
+    color: var(--white);
+    padding-bottom: 20px;
+    margin-top: 60px;
+}
+#profits h3,
+#growth h3
+{
+    font-size: 1.8rem;
+    padding: 30px 20px;
+}
+.bar {
+    font-family: var(--font);
 
+}
+#contact {
+    background-color: var(--black);
+    color: var(--white);
+}
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 40px;
+}
+address {
+    font-family: var(--font);
+    font-size: .9rem;
+    line-height: 20px;
+    text-align: center;
+}
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 body {
@@ -118,6 +181,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #innovation {
