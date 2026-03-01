@@ -86,6 +86,17 @@ p {
     font-size: 1rem;
     line-height: 22px;
 }
+/*--------------Animation Heading Section--------------------*/
+h2,
+h3
+{
+    animation-name: headingmove;
+    animation-duration: 1s;
+}
+@keyframes headingmove {
+    0% {transform: translate(0, -30px); opacity: 0;}
+    100% {transform: translate(0); opacity: 1;}
+}
 /*--------------Header + Nav Section--------------------*/
 #topnav {
     display: flex;
@@ -225,6 +236,18 @@ input:checked ~ label:not(.steps) span:after
     background-color: var(--blue);
     color: var(--white);
     border-radius: 10px;
+    transition-duration: .6s;
+}
+/*--------------Animation Offer Section--------------------*/
+#strategic1:hover,
+#high-impact2:hover,
+#business3:hover,
+#digital4:hover,
+#exclusive5:hover,
+#corporate6:hover
+{
+    transition-duration: .6s;
+    transform: translate(0, -10px);
 }
 #strategic1 h3,
 #high-impact2 h3,
@@ -234,6 +257,7 @@ input:checked ~ label:not(.steps) span:after
 #corporate6 h3
 {
     padding: 30px 40px 20px 40px;
+    line-height: 30px;
 }
 
 #strategic1 p,
@@ -271,7 +295,9 @@ th {
 tr:nth-child(odd) {
     background-color: var(--charcoal);
 }
-th, td {
+th,
+td 
+{
     padding: 20px 40px;
     border: 2px solid var(--charcoal);
 }
@@ -505,9 +531,29 @@ header img {
         transition-duration: .6s;
         transform: scale(1.05, 1.09);
     }
+    .gridoffer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 0.2fr);
+        gap: 15px;
+    }
+    .provencontainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 20px;
+    }
 }
 
 /* MEDIA QUERIES (LARGE) */
 @media screen and (min-width: 1024px) {
-    
+    .gridoffer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 0.2fr);
+        gap: 15px;
+    }
+    th, td {
+        padding: 20px 60px;
+    }
 }
