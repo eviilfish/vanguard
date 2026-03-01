@@ -64,6 +64,7 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+/*--------------Heading & P Styles Section--------------------*/
 h1 {
     font-family: var(--font);
     font-size: 2rem;
@@ -85,25 +86,129 @@ p {
     font-size: 1rem;
     line-height: 22px;
 }
-header {
+/*--------------Header + Nav Section--------------------*/
+#topnav {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
     background-color: var(--black);
-    padding: 20px;
+    padding: 0;
+    margin: 0;
 }
 header h1 {
     color: var(--blue);
 }
-nav li {
+nav ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+}
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+nav li a {
+    display:block;
+    font-family: var(--font);
+    font-size: 1.4rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--blue);
+    transition: background-color .3s ease-in;
+}
+nav a:hover, nav input:hover {
+    background-color: var(--black);
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+#menu-toggle {
+    text-align: center;
+    appearance: none;
+    border: none;
+}
+label span {
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+label span:before, label span:after {
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
     width: 100%;
 }
-nav a {
-    color: var(--blue);
-    text-decoration: none;
+label span:before {
+    top: .75rem;
 }
+label span:after {
+    top: -.75rem;
+}
+input {
+  display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, 
+input:checked ~ label:not(.steps) span:after 
+{
+    top: 0;
+}
+/*--------------Innovation & Investment Section--------------------*/
 #innovation {
     color: var(--white);
     /*add background blur*/
 }
+#innovation p {
+    padding-bottom: 30px;
+}
+#innovation a {
+    background-color: var(--blue);
+    color: var(--white);
+    font-family: var(--font);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 15px;
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    transition-duration: .6s;
+}
+#innovation a:hover {
+    background-color: var(--red);
+    border: var(--red);
+    transition-duration: .6s;
+    transform: scale(1, 2);
+}
+/*--------------Offer Section--------------------*/
 .gridoffer {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -140,6 +245,7 @@ nav a {
 {
     padding: 0 20px 20px 20px;
 }
+/*--------------Proven Results Section--------------------*/
 #proven {
     background-color: var(--blue);
     color: var(--white);
@@ -173,6 +279,7 @@ th, td {
     font-family: var(--font);
 
 }
+/*--------------Contact Section--------------------*/
 #contact {
     background-color: var(--black);
     color: var(--white);
@@ -184,25 +291,44 @@ form {
     font-family: var(--font);
     font-size: 1rem;
 }
-input,
-textarea
+input
 {
     display: block;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 10px;
     margin: 5px auto;
     box-sizing: border-box;
     border: solid 2px var(--blue);
+    height: 40px;
 }
+textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    margin: 5px auto;
+    box-sizing: border-box;
+    border: solid 2px var(--blue);
+    height: 100px;
+}
+/*--------------Button Style Section--------------------*/
 input[type=submit] {
     background-color: var(--blue);
     color: var(--white);
     font-weight: bold;
     font-size: 1.1rem;
     border-radius: 10px;
-    margin: 0;
-    cursor: pointer;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    transition-duration: .6s;
 }
+input[type=submit]:hover {
+    background-color: var(--red);
+    border: var(--red);
+    transition-duration: .6s;
+    transform: scale(1.05, 1.09);
+}
+/*--------------Footer Section--------------------*/
 footer {
     background-color: var(--black);
     color: var(--white);
@@ -271,7 +397,7 @@ header img {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 2s;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -300,6 +426,22 @@ header img {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
+@media screen and (min-width: 800px) {
+    nav ul {
+        overflow:visible;
+        position:absolute;
+        top: 1.5rem;
+        left:.5rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    nav li a {
+        display:inline-block;
+        color: var(--blue);
+    }
+    label span, input {
+        display:none;
+    }
 
     #results {
         grid-template-columns: 1fr 1fr;
@@ -314,6 +456,58 @@ header img {
     .bar-chart {
         width: 50%;
     }
-
+    /*Inserted contact form at the medium breakpoint because it wouldn't work when expanded at the mobile style*/
+    #contact {
+    background-color: var(--black);
+    color: var(--white);
+    }
+    #contact p {
+        padding-bottom: 30px;
+    }
+    form {
+        font-family: var(--font);
+        font-size: 1rem;
+    }
+    input
+    {
+        display: block;
+        width: 100%;
+        padding: 10px 10px;
+        margin: 5px auto;
+        box-sizing: border-box;
+        border: solid 2px var(--blue);
+        height: 40px;
+    }
+    textarea {
+        display: block;
+        width: 100%;
+        padding: 10px 10px;
+        margin: 5px auto;
+        box-sizing: border-box;
+        border: solid 2px var(--blue);
+        height: 100px;
+    }
+    /*--------------Button Style Section--------------------*/
+    input[type=submit] {
+        background-color: var(--blue);
+        color: var(--white);
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        height: 50px;
+        margin-top: 20px;
+        margin-bottom: 0;
+        transition-duration: .6s;
+    }
+    input[type=submit]:hover {
+        background-color: var(--red);
+        border: var(--red);
+        transition-duration: .6s;
+        transform: scale(1.05, 1.09);
+    }
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 1024px) {
+    
+}

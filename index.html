@@ -16,17 +16,21 @@
 <body>
 <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
     <header>
-        <img src="images/vanguard-logo.svg" alt="vanguard logo - diamonds stacked on top of each other, it looks like corn in it's husk" width="90">
-        <h1>Vaanguard</h1>
+        <section id="topnav">
+            <img src="images/vanguard-logo.svg" alt="vanguard logo - diamonds stacked on top of each other, it looks like corn in it's husk" width="90">
+            <h1>Vaanguard</h1>
+            <nav>
+                <h2>Main Navigation</h2>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle"><span></span></label>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+            </nav>
+        </section>
     </header>
-    <nav>
-        <h2>Main Navigation</h2>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-    </nav>
     <main>
         <section id="innovation">
             <div class="container">
@@ -35,9 +39,7 @@
                     We empower businesses to lead the future with high-impact strategies, market intelligence, 
                     and financial solutions that drive success.
                 </p>
-                <p>
-                    Request a Consultation
-                </p>
+                <a href="#">Request a Consultation</a>
             </div>
         </section>
         <section id="expertise">
