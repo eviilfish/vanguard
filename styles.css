@@ -199,6 +199,12 @@ input:checked ~ label:not(.steps) span:after
 #innovation p {
     padding-bottom: 30px;
 }
+#innovation h2,
+#innovation p,
+#innovation a 
+{
+    backdrop-filter: blur(20px);
+}
 #innovation a {
     background-color: var(--blue);
     color: var(--white);
@@ -397,12 +403,18 @@ body {
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 header img {
     content: "";
-
+    animation-name: logofloat;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+@keyframes logofloat {
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(0, 20px);}
+    100% {transform: translate(0, -0);}
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -555,5 +567,11 @@ header img {
     }
     th, td {
         padding: 20px 60px;
+    }
+    .formcontain {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 0.5fr);
+        gap: 0 30px;
     }
 }
