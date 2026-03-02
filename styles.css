@@ -102,18 +102,34 @@ h3
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: right;
     flex-wrap: nowrap;
+    justify-content: stretch;
     background-color: var(--black);
     padding: 0;
     margin: 0;
+    width: 100%;
+    gap: 10px;
+}
+.flex1 {
+    flex-grow: 0;
+}
+.flex2 {
+    flex-grow: 0;
+}
+.flex3 {
+    flex-grow: 4;
+    align-items: flex-start;
+}
+header img {
+    margin-left: 20px;
 }
 header h1 {
     color: var(--blue);
 }
 nav ul {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    padding: 1px;
     list-style: none;
     overflow: hidden;
     text-align: center;
@@ -122,12 +138,13 @@ nav ul {
 nav h2 {
     visibility: hidden;
     height: 0;
+    width: 0;
 }
 nav li a {
     display: block;
     font-family: var(--font);
     font-size: 1.4rem;
-    padding: 1rem;
+    padding: 20px 40px;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
@@ -140,13 +157,16 @@ nav a:hover {
 nav label {
     cursor: pointer;
     display: inline-block;
-    padding: 1.5rem;
+    padding: 30px;
     user-select: none;
 }
 #menu-toggle {
     text-align: center;
     appearance: none;
     border: none;
+    margin: 0;
+    height: 0;
+    width: 0;
 }
 label span {
     background-color: var(--white);
@@ -154,6 +174,7 @@ label span {
     height: .25rem;
     position: relative;
     width: 2rem;
+    padding: 0;
 }
 label span:before, label span:after {
     background: var(--white);
@@ -164,21 +185,22 @@ label span:before, label span:after {
     width: 100%;
 }
 label span:before {
-    top: .75rem;
+    top: .85rem;
 }
 label span:after {
-    top: -.75rem;
+    top: -.85rem;
 }
 input {
   display: none;
 }
 input:checked ~ ul {
-    max-height: 500px;
+    max-height: 200px;
 }
 /*--------------Innovation & Investment Section--------------------*/
 #innovation {
     color: var(--white);
-    /*add background blur*/
+    box-shadow: 0 5px 5px var(--blue) inset;
+    overflow: hidden;
 }
 #innovation p {
     padding-bottom: 30px;
