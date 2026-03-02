@@ -128,8 +128,8 @@ header h1 {
     color: var(--blue);
 }
 nav ul {
-    width: 100%;
-    padding: 1px;
+    width: 50%;
+    padding: 20px;
     list-style: none;
     overflow: hidden;
     text-align: center;
@@ -205,10 +205,7 @@ input:checked ~ ul {
 #innovation p {
     padding-bottom: 30px;
 }
-#innovation h2,
-#innovation p,
-#innovation a 
-{
+.blurpls {
     backdrop-filter: blur(20px);
 }
 #innovation a {
@@ -471,16 +468,22 @@ header img {
 /* MEDIA QUERIES (MEDIUM) */ 
 @media screen and (min-width: 800px) {
     nav ul {
-        overflow:visible;
-        position:absolute;
-        top: 1.5rem;
-        left:.5rem;
+        overflow: visible;
+        position: absolute;
+        top: 2.6rem;
+        text-align: center;
         display: grid;
-        grid-template-columns: auto auto auto;
+        margin-left: 130px;
+        margin-right: 0;
+        grid-template-columns: repeat(3, .5fr);
+        grid-template-rows: repeat(1, .5fr);
+        gap: 30px;
     }
     nav li a {
         display:inline-block;
         color: var(--blue);
+        width: 100%;
+        padding: 15px;
     }
     label span, input {
         display:none;
