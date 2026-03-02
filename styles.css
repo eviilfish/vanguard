@@ -121,10 +121,10 @@ nav ul {
 }
 nav h2 {
     visibility: hidden;
-    height: 1px;
+    height: 0;
 }
 nav li a {
-    display:block;
+    display: block;
     font-family: var(--font);
     font-size: 1.4rem;
     padding: 1rem;
@@ -132,10 +132,10 @@ nav li a {
     font-weight: bold;
     text-decoration: none;
     color: var(--blue);
-    transition: background-color .3s ease-in;
 }
-nav a:hover, nav input:hover {
-    background-color: var(--black);
+nav a:hover {
+    background-color: var(--blue);
+    color: var(--black);
 }
 nav label {
     cursor: pointer;
@@ -153,7 +153,6 @@ label span {
     display: block;
     height: .25rem;
     position: relative;
-    transition: background-color .3s ease-out;
     width: 2rem;
 }
 label span:before, label span:after {
@@ -162,7 +161,6 @@ label span:before, label span:after {
     display: block;
     height: 100%;
     position: absolute;
-    transition: all .2s ease-out;
     width: 100%;
 }
 label span:before {
@@ -176,20 +174,6 @@ input {
 }
 input:checked ~ ul {
     max-height: 500px;
-}
-input:checked ~ label span {
-    background: transparent;
-}
-input:checked ~ label span:before {
-    transform: rotate(-45deg);
-}
-input:checked ~ label span:after {
-    transform: rotate(45deg);
-}
-input:checked ~ label:not(.steps) span:before, 
-input:checked ~ label:not(.steps) span:after 
-{
-    top: 0;
 }
 /*--------------Innovation & Investment Section--------------------*/
 #innovation {
