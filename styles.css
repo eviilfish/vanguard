@@ -214,14 +214,13 @@ input:checked ~ ul {
 #innovation a {
     background-color: var(--blue);
     color: var(--white);
+    display: inline-block;
     font-family: var(--font);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
     border-radius: 10px;
     padding: 15px;
-    height: 50px;
-    width: 100%;
     margin: auto;
     transition-duration: .6s;
 }
@@ -229,7 +228,7 @@ input:checked ~ ul {
     background-color: var(--red);
     border: var(--red);
     transition-duration: .6s;
-    transform: scale(1, 2);
+    transform: scale(1.05, 1.09);
 }
 /*--------------Offer Section--------------------*/
 .gridoffer {
